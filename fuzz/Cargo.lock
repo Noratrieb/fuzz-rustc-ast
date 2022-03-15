@@ -18,6 +18,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "cc"
+version = "1.0.73"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2fff2a6927b3bb87f9595d67196a70493f627687a71d87a0d692242c33f58c11"
+
+[[package]]
 name = "derive_arbitrary"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -37,6 +43,31 @@ dependencies = [
  "quote",
  "syn 1.0.88 (git+https://github.com/Nilstrieb/syn?branch=arbitrary)",
 ]
+
+[[package]]
+name = "fuzz-rustc-ast-fuzz"
+version = "0.0.0"
+dependencies = [
+ "fuzz-rustc-ast",
+ "libfuzzer-sys",
+]
+
+[[package]]
+name = "libfuzzer-sys"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "336244aaeab6a12df46480dc585802aa743a72d66b11937844c61bbca84c991d"
+dependencies = [
+ "arbitrary",
+ "cc",
+ "once_cell",
+]
+
+[[package]]
+name = "once_cell"
+version = "1.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "87f3e037eac156d1775da914196f0f37741a274155e34a0b7e427c35d2a2ecb9"
 
 [[package]]
 name = "proc-macro2"
@@ -70,7 +101,7 @@ dependencies = [
 [[package]]
 name = "syn"
 version = "1.0.88"
-source = "git+https://github.com/Nilstrieb/syn?branch=arbitrary#521b62a2934ab332a3a4f248f0dc4ca34648bc9e"
+source = "git+https://github.com/Nilstrieb/syn?branch=arbitrary#678493490de7c50b79b9461df9a67a22d43e5200"
 dependencies = [
  "arbitrary",
  "proc-macro2",

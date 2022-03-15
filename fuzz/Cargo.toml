@@ -1,0 +1,25 @@
+[package]
+name = "fuzz-rustc-ast-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.fuzz-rustc-ast]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "ast"
+path = "fuzz_targets/ast.rs"
+test = false
+doc = false

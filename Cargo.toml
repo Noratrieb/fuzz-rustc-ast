@@ -4,7 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+anyhow = "1.0.56"
 arbitrary = "1.1.0"
+quote = "1.0.15"
 # fork of syn with the arbitrary trait impls
 syn = { git = "https://github.com/Nilstrieb/syn", branch = "arbitrary", features = ["full", "arbitrary"] }
 
