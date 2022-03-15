@@ -3,6 +3,9 @@ name = "fuzz-rustc-ast"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+arbitrary = "1.1.0"
+# fork of syn with the arbitrary trait impls
+syn = { git = "https://github.com/Nilstrieb/syn", branch = "arbitrary", features = ["full", "arbitrary"] }
+
+[features]
